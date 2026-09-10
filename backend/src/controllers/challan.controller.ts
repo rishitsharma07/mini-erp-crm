@@ -88,7 +88,7 @@ export const listChallans = asyncHandler(async (req: Request, res: Response) => 
       skip: (page - 1) * pageSize,
       take: pageSize,
       orderBy: { createdAt: "desc" },
-      include: { customer: true },
+      include: { customer: true, items: true },
     }),
     prisma.challan.count({ where }),
   ]);
